@@ -1,8 +1,8 @@
 # 🛒 Superstore Data Cleaning & Analysis
 
-A complete **data analytics project** using the Superstore dataset, covering data cleaning with **Microsoft Excel Power Query** and business analysis using **Microsoft SQL Server**.
+A complete **Data Analytics project** using the Superstore dataset, covering **data cleaning with Microsoft Excel Power Query** and **business analysis using Microsoft SQL Server**.
 
-The project demonstrates an end-to-end data analysis workflow — from raw and inconsistent data to cleaned datasets, SQL-based analysis, and actionable business insights.
+The project demonstrates an end-to-end data analysis workflow — from raw data cleaning and transformation to SQL-based exploratory analysis, reporting, and business insights.
 
 ---
 
@@ -10,33 +10,57 @@ The project demonstrates an end-to-end data analysis workflow — from raw and i
 
 The objective of this project is to analyze Superstore sales data and uncover insights related to:
 
-* Sales and profitability
-* Customers and orders
-* Product categories and sub-categories
-* Regional performance
-* State-wise sales
-* Discounts and their impact on profit
-* Top-performing products and sub-categories
+- 📦 Sales and profitability
+- 👥 Customers and orders
+- 🏷️ Product categories and sub-categories
+- 🌎 Regional performance
+- 📍 State-wise sales
+- 🏷️ Discounts and their impact on profit
+- 🏆 Top-performing products and sub-categories
 
-The project uses:
+### Project Workflow
 
-**Excel Power Query → Data Cleaning → SQL Server → Data Analysis → Business Insights**
-
----
-
-## 🛠️ Tools & Technologies
-
-| Tool                     | Purpose                                    |
-| ------------------------ | ------------------------------------------ |
-| **Microsoft Excel**      | Initial data inspection and transformation |
-| **Power Query**          | Data cleaning and preprocessing            |
-| **Microsoft SQL Server** | Data storage and analysis                  |
-| **SQL**                  | Queries, views, aggregations and analysis  |
-| **GitHub**               | Project documentation and version control  |
+**Excel → Power Query → Data Cleaning → SQL Server → SQL Analysis → Report**
 
 ---
 
-## 🔄 Project Workflow
+# 📸 Project Screenshots
+
+### 📊 Excel Dataset
+
+<img width="500" alt="Excel Dataset" src="https://github.com/user-attachments/assets/4f117c95-6e21-43e9-9626-230f544eed75" />
+
+### 🧹 Dataset in Power Query
+
+<img width="500" alt="Power Query Data Cleaning" src="https://github.com/user-attachments/assets/93a853e6-d7f0-4969-a7ec-185bb8cd12ea" />
+
+### 🗄️ Microsoft SQL Analysis
+
+<img width="500" alt="Microsoft SQL Analysis" src="https://github.com/user-attachments/assets/525196e2-7fce-4059-846d-631135066404" />
+
+### ⚙️ Creating Stored Procedure
+
+<img width="500" alt="Creating Stored Procedure" src="https://github.com/user-attachments/assets/2f9571a1-6817-48f7-a887-9bbf9cd3cd36" />
+
+### 📈 Final SQL Report
+
+<img width="500" alt="Final SQL Report" src="https://github.com/user-attachments/assets/20a86cf9-c1ac-4509-b82c-fe055c60933e" />
+
+---
+
+# 🛠️ Tools & Technologies
+
+| Tool | Purpose |
+|---|---|
+| **Microsoft Excel** | Initial data inspection and transformation |
+| **Power Query** | Data cleaning and preprocessing |
+| **Microsoft SQL Server** | Data storage and analysis |
+| **SQL** | Queries, views, aggregations and reporting |
+| **GitHub** | Project documentation and version control |
+
+---
+
+# 🔄 Project Workflow
 
 ```text
 Raw Superstore Dataset
@@ -51,35 +75,33 @@ Clean Dataset
         ↓
 Microsoft SQL Server
         ↓
-SQL Analysis
+SQL Exploratory Data Analysis
         ↓
-Views & Stored Procedures
+Views & Stored Procedure
         ↓
-Business Insights
+Final Business Report
 ```
 
 ---
 
 # 🧹 1. Data Cleaning Using Excel Power Query
 
-The raw Superstore dataset contained inconsistencies that needed to be addressed before performing analysis.
+The raw Superstore dataset was cleaned and transformed using **Excel Power Query** before being imported into SQL Server.
 
-### Cleaning & Transformation Steps
+### Cleaning & Transformation
 
-Using **Excel Power Query**, the following tasks were performed:
+- Removed unnecessary columns
+- Removed duplicate records
+- Handled missing/null values
+- Corrected inconsistent data types
+- Cleaned text fields
+- Standardized categorical values
+- Converted date columns into appropriate date formats
+- Checked numerical columns for invalid values
+- Verified Sales, Profit and Discount fields
+- Prepared the final dataset for SQL Server
 
-* Removed unnecessary columns
-* Removed duplicate records
-* Handled missing/null values
-* Corrected inconsistent data types
-* Cleaned text fields
-* Standardized categorical values
-* Converted date columns into appropriate date formats
-* Checked numerical columns for invalid values
-* Verified sales, profit and discount fields
-* Prepared the final dataset for SQL Server import
-
-### Example Data Quality Checks
+### Data Quality Checks
 
 ```text
 ✓ Duplicate records checked
@@ -102,7 +124,7 @@ A dedicated database was created:
 CREATE DATABASE store_analysis;
 ```
 
-The Superstore dataset was then loaded into the database.
+The cleaned Superstore dataset was then loaded into the database.
 
 ---
 
@@ -110,19 +132,17 @@ The Superstore dataset was then loaded into the database.
 
 SQL was used to perform exploratory and business-oriented analysis on the cleaned dataset.
 
-The analysis included:
+## 📦 Overall Business Metrics
 
-### 📦 Overall Business Metrics
+The analysis calculates important KPIs such as:
 
-Calculated important KPIs such as:
-
-* Total Orders
-* Total Customers
-* Total Products
-* Total Sales
-* Total Profit
-* Average Order Value
-* Average Discount
+- Total Orders
+- Total Customers
+- Total Products
+- Total Sales
+- Total Profit
+- Average Order Value
+- Average Discount
 
 Example:
 
@@ -138,17 +158,17 @@ FROM superstore;
 
 ---
 
-## 💰 Profitability Analysis
+# 💰 4. Profitability Analysis
 
-Profitability was analyzed across different product segments and sub-categories.
+Profitability was analyzed across different product categories and sub-categories.
 
-The analysis focused on identifying:
+The analysis focuses on:
 
-* Most profitable sub-categories
-* Least profitable sub-categories
-* Sales vs. profit performance
-* Products generating losses
-* Impact of discounts on profitability
+- Most profitable sub-categories
+- Least profitable sub-categories
+- Sales vs. profit performance
+- Loss-making products
+- Impact of discounts on profitability
 
 Example:
 
@@ -164,9 +184,9 @@ ORDER BY Total_Profit DESC;
 
 ---
 
-# 🏷️ 4. Discount Analysis
+# 🏷️ 5. Discount Analysis
 
-Discount ranges were created to understand how different levels of discount affected sales and profitability.
+Discount ranges were created to understand the relationship between **discounting and profitability**.
 
 Example discount bands:
 
@@ -178,28 +198,28 @@ Example discount bands:
 40%+
 ```
 
-The analysis helps identify whether higher discounts are associated with lower profitability.
+This analysis helps identify whether higher discount levels are associated with lower profitability.
 
 ---
 
-# 🌎 5. Regional Analysis
+# 🌎 6. Regional Analysis
 
 Sales and profitability were analyzed across different regions.
 
-The project identifies:
+The analysis identifies:
 
-* Best-performing regions
-* Top sub-category by region
-* Regional sales contribution
-* Regional profitability
+- Best-performing regions
+- Top sub-category by region
+- Regional sales contribution
+- Regional profitability
 
 ---
 
-# 📍 6. State-Level Analysis
+# 📍 7. State-Level Analysis
 
-State-wise sales performance was analyzed to identify the states generating the highest sales.
+State-wise sales performance was analyzed to identify the highest-performing markets.
 
-Example analysis:
+Example:
 
 ```sql
 SELECT 
@@ -210,27 +230,27 @@ GROUP BY State
 ORDER BY Total_Sales DESC;
 ```
 
-This helps identify high-value geographic markets.
+This analysis helps identify high-value geographic markets.
 
 ---
 
-# 🏆 7. Top-Selling Sub-Categories
+# 🏆 8. Top-Selling Sub-Categories
 
-The project analyzes the highest-selling sub-categories across different regions.
+The project analyzes the highest-performing sub-categories across different regions.
 
-The analysis helps answer questions such as:
+Key questions include:
 
-* Which sub-category performs best in each region?
-* Which products drive regional sales?
-* Which regions have the strongest product demand?
+- Which sub-category performs best in each region?
+- Which products drive regional sales?
+- Which regions have the strongest product demand?
 
 ---
 
-# 👁️ SQL Views
+# 👁️ 9. SQL Views
 
 SQL views were created to organize frequently used analysis results.
 
-Examples include:
+### Views Created
 
 ```text
 Totals
@@ -244,11 +264,9 @@ These views make the analysis easier to reuse and maintain.
 
 ---
 
-# ⚙️ Stored Procedure
+# ⚙️ 10. Stored Procedure
 
-A stored procedure was created to execute multiple analysis queries together.
-
-Example structure:
+A stored procedure was created to execute multiple analysis queries together and generate a consolidated report.
 
 ```sql
 CREATE PROCEDURE reports
@@ -275,13 +293,13 @@ BEGIN
 END;
 ```
 
-The stored procedure provides a consolidated business report from the SQL analysis.
+The stored procedure provides a consolidated view of the key analysis results.
 
 ---
 
 # 📈 Key Business Questions
 
-The project attempts to answer the following questions:
+This project attempts to answer:
 
 1. How many orders and customers does the business have?
 2. What are the total sales and total profit?
@@ -298,14 +316,14 @@ The project attempts to answer the following questions:
 
 # 💡 Business Insights
 
-The analysis can be used to identify:
+The analysis helps identify:
 
-* High-performing product categories
-* Low-margin and loss-making products
-* Strong geographic markets
-* Potentially excessive discounting
-* Regional product preferences
-* Opportunities for improving profitability
+- High-performing product categories
+- Low-margin and loss-making products
+- Strong geographic markets
+- Potentially excessive discounting
+- Regional product preferences
+- Opportunities for improving profitability
 
 These insights can support better decisions around **pricing, discounts, product strategy, and regional sales planning**.
 
@@ -331,8 +349,11 @@ Superstore-Data-Analysis/
 │   └── stored_procedure.sql
 │
 └── screenshots/
+    ├── excel_dataset.png
     ├── power_query_cleaning.png
-    └── sql_analysis.png
+    ├── sql_analysis.png
+    ├── stored_procedure.png
+    └── final_report.png
 ```
 
 ---
@@ -341,37 +362,36 @@ Superstore-Data-Analysis/
 
 ### Excel & Power Query
 
-* Data Cleaning
-* Data Transformation
-* Data Type Management
-* Duplicate Removal
-* Missing Value Handling
-* Date Transformation
-* Data Preparation
+- Data Cleaning
+- Data Transformation
+- Data Type Management
+- Duplicate Removal
+- Missing Value Handling
+- Date Transformation
+- Data Preparation
 
 ### SQL Server
 
-* Database Creation
-* Table Management
-* SELECT Statements
-* Aggregate Functions
-* `GROUP BY`
-* `ORDER BY`
-* `CASE`
-* Subqueries
-* Views
-* Stored Procedures
-* Business KPI Analysis
+- Database Creation
+- Table Management
+- Aggregate Functions
+- `GROUP BY`
+- `ORDER BY`
+- `CASE`
+- Subqueries
+- Views
+- Stored Procedures
+- KPI Analysis
 
 ### Data Analytics
 
-* Exploratory Data Analysis
-* Profitability Analysis
-* Sales Analysis
-* Regional Analysis
-* Customer Analysis
-* Discount Analysis
-* Business Insight Generation
+- Exploratory Data Analysis
+- Profitability Analysis
+- Sales Analysis
+- Regional Analysis
+- Customer Analysis
+- Discount Analysis
+- Business Insight Generation
 
 ---
 
@@ -381,7 +401,7 @@ The main objective of this project is to demonstrate an end-to-end **Data Analys
 
 > **Clean → Transform → Store → Analyze → Generate Insights**
 
-The project combines **Excel Power Query** for efficient data preparation with **Microsoft SQL Server** for structured business analysis.
+The project combines **Excel Power Query** for efficient data preparation with **Microsoft SQL Server** for structured business analysis and reporting.
 
 ---
 
@@ -389,7 +409,7 @@ The project combines **Excel Power Query** for efficient data preparation with *
 
 **Yash Kumar**
 
-Data Analyst | Excel | Power Query | SQL | Power BI | Python
+**Data Analyst | Excel | Power Query | SQL | Power BI | Python**
 
 ---
 
